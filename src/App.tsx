@@ -7,8 +7,17 @@ import {
 import { Button } from "./components/ui/button";
 import axios from "axios";
 
+interface newsItem {
+  author: string;
+  urlToImage: string;
+  publishedAt: string;
+  url: string;
+  title: string;
+  description: string;
+}
+
 const App = () => {
-  const [news, setNews] = useState<string[]>([]);
+  const [news, setNews] = useState<newsItem[]>([]);
   const [page, setPage] = useState(1);
   useEffect(() => {
     axios
